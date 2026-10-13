@@ -14,7 +14,6 @@ https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68#issuecomment-6152
 >
 > Happy to adjust if you'd rather a different approach. Will report back on how it goes.
 >
-> I used an AI assistant to help draft this plan; the diagnosis, approach, and test plan reflect my own understanding and were reviewed by me directly.
 
 <!-- CONFIRM this matches what's actually posted on GitHub before uploading — paste the real text if anything differs. -->
 
