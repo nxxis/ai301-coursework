@@ -6,14 +6,13 @@ GitHub username: nxxis
 
 https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68#issuecomment-6152849505
 
-> Building on my reproduction above (https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68#issuecomment-5882341492), my proposed plan is: in `index()`, skip the `BM25Okapi` construction (`rag/retriever/keyword_search.py:25`), explicitly setting `self.bm25 = None` in that branch so `search()`'s existing empty-index guard continues to handle it correctly — no change to `search()` itself. Per the issue's note, I'd also remove the `xfail(strict=True)` marker on `tests/unit/test_keyword_search.py::TestKeywordSearcher::test_empty_index` as part of the fix, rather than leave it in place.
+> Building on my reproduction above ([#68 (comment)](https://github.com/codepath/pathreview-ai301-fa26-s1/issues/68#issuecomment-5882341492)), my proposed plan is: in `index()`, skip the `BM25Okapi` construction (`rag/retriever/keyword_search.py:25`) when `tokenized_corpus` is empty, explicitly setting `self.bm25 = None` in that branch so `search()`'s existing empty-index guard continues to handle it correctly — no change to `search()` itself. Per the issue's note, I'd also remove the `xfail(strict=True)` marker on `tests/unit/test_keyword_search.py::TestKeywordSearcher::test_empty_index` as part of the fix, rather than leave it in place.
 >
 > Test plan: re-run `searcher.index([])` — before: `ZeroDivisionError: division by zero`; after: no exception, `searcher.bm25 is None`, `searcher.chunks == []`. `test_empty_index` should go from `XFAIL` to passing once the marker is removed.
 >
-> Open question I haven't investigated yet: whether a corpus of only empty-string entries (e.g. `{"text": ""}`) hits a related zero-length-average issue inside `rank_bm25` for different reasons — flagging it now rather than assuming this fix covers it.
+> Open question I haven't investigated yet: whether a corpus of only empty-string entries (e.g. `[{"text": ""}]`) hits a related zero-length-average issue inside `rank_bm25` for different reasons — flagging it now rather than assuming this fix covers it.
 >
 > Happy to adjust if you'd rather a different approach. Will report back on how it goes.
->
 
 <!-- CONFIRM this matches what's actually posted on GitHub before uploading — paste the real text if anything differs. -->
 
