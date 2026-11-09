@@ -12,7 +12,6 @@ files and no evidence uploads are part of Assignment 5.
 **GitHub Username:** nxxis
 **Issue:** https://github.com/wheelgap/wheelgap/issues/57
 **Pull Request:** https://github.com/wheelgap/wheelgap/pull/67
-**Assignment 5 deadline:** November 9, 2026.
 
 One repository, built across units 5 to 8, telling the whole story of your real
 contribution. Fill it as you work, not at the end — the sections below ask for evidence that
@@ -57,27 +56,19 @@ one in the week it belongs to.
 
 **Unit 5: Built issue-scout and fixed two scan bugs before it found a usable issue**
 
-**Unit deadline:** 2026-10-19
-
-I installed issue-scout over my Unit 1 skill and wrote search-strategy.md with queries traced to my fit profile. The first scan got zero hits from one query, because GitHub treated my quoted "rag OR retrieval OR ..." string as one literal phrase rather than an OR. It also let a mirror repo created that same day (0 stars, 1 commit, copied issues) take all five graded slots, because copied issues look fresh and uncommented, which games a "fewest comments, newest first" ranking. I split the OR query into one search per term and added a "keep at most 2 results per repo" filter; the second scan surfaced the issue I claimed.
+2026-10-19: I installed issue-scout over my Unit 1 skill and wrote search-strategy.md with queries traced to my fit profile. The first scan got zero hits from one query, because GitHub treated my quoted "rag OR retrieval OR ..." string as one literal phrase rather than an OR. It also let a mirror repo created that same day (0 stars, 1 commit, copied issues) take all five graded slots, because copied issues look fresh and uncommented, which games a "fewest comments, newest first" ranking. I split the OR query into one search per term and added a "keep at most 2 results per repo" filter; the second scan surfaced the issue I claimed.
 
 **Unit 6: Installed the voice guard and wrote CLAUDE.local.md, after I had already posted my claim**
 
-**Unit deadline:** 2026-10-26
-
-I merged my three voice-guide copies into one at ~/.claude/voice-guard/voice-guide.md (the pr-precheck copy already held all 9 rules), added an Upstream section with 4 rules for claims, questions and pings, and installed the hook; the wiring test was stopped with "no body the guard can read". Because I installed it after posting, I ran the guard by hand on my two posted comments, and it stopped both: the claim broke my new "Claim with intent, a first step, and an offer to adjust" rule, and the follow-up's "Opening the PR shortly." broke "Promise investigation, not a fix or a date". My CLAUDE.local.md listed all four of CONTRIBUTING.md's pre-push commands, and running the two I had skipped (`ruff format --check`, `mypy`) showed my new test was not formatted. I skipped the unit's rubric-scope patch and wrote the memory file by hand instead of running a scoped orientation agent.
+2026-10-26: I merged my three voice-guide copies into one at ~/.claude/voice-guard/voice-guide.md (the pr-precheck copy already held all 9 rules), added an Upstream section with 4 rules for claims, questions and pings, and installed the hook; the wiring test was stopped with "no body the guard can read". Because I installed it after posting, I ran the guard by hand on my two posted comments, and it stopped both: the claim broke my new "Claim with intent, a first step, and an offer to adjust" rule, and the follow-up's "Opening the PR shortly." broke "Promise investigation, not a fix or a date". My CLAUDE.local.md listed all four of CONTRIBUTING.md's pre-push commands, and running the two I had skipped (`ruff format --check`, `mypy`) showed my new test was not formatted. I skipped the unit's rubric-scope patch and wrote the memory file by hand instead of running a scoped orientation agent.
 
 **Unit 7: Installed the ship-gate and wrote a manifest; it stopped my branch three times before passing**
 
-**Unit deadline:** 2026-11-02
-
-My manifest lists CONTRIBUTING.md's four checks (ruff format --check, ruff check, mypy, pytest). The gate stopped first on formatting (three single-quoted lines in my test, fixed in commit 72b2ba7), then my pr-precheck rejected the description for ignoring the repo's PR template and using "Fixes #57" where CONTRIBUTING.md asks for "Closes", then rejected the branch because plan.md's Scope didn't cover the CHANGELOG.md line. After I rewrote the description to the template and added the changelog line to the plan's Scope and Deviations, it printed "ship-gate: PASS" and I updated PR #67's description through Claude Code. I had opened PR #67 before installing the gate, so the original description went out unchecked; the gate fixed what I post from now on, not what was already posted.
+2026-11-02: My manifest lists CONTRIBUTING.md's four checks (ruff format --check, ruff check, mypy, pytest). The gate stopped first on formatting (three single-quoted lines in my test, fixed in commit 72b2ba7), then my pr-precheck rejected the description for ignoring the repo's PR template and using "Fixes #57" where CONTRIBUTING.md asks for "Closes", then rejected the branch because plan.md's Scope didn't cover the CHANGELOG.md line. After I rewrote the description to the template and added the changelog line to the plan's Scope and Deviations, it printed "ship-gate: PASS" and I updated PR #67's description through Claude Code. I had opened PR #67 before installing the gate, so the original description went out unchecked; the gate fixed what I post from now on, not what was already posted.
 
 **Unit 8: Installed the PR monitor and playbook; it drafted a rebase plan for the merge conflict a real review asked me to fix**
 
-**Unit deadline:** 2026-11-09
-
-`--state` first said "NO PR YET" because I had pushed without `-u`, so gh couldn't tie my branch to PR #67; `git push -u` fixed it, and the monitor then reported the PR as CONFLICTING. I wrote the playbook from wheelgap's own numbers (outside PRs #45, #48 and #58 merged 2 to 6 minutes after opening; CONTRIBUTING.md says review comes "within a day or so"), so I nudge only after 3 quiet days. Its draft saw my unpushed merge commit and told me not to redo it, but it assumed main still had a "### Fixed" section under "## Unreleased", which had moved into 0.5.0 when the maintainer released it. I didn't post the draft; I pushed my fixes, wrote my-reply.md myself from my response rules, and posted it through Claude Code, where the voice guard let it through.
+2026-11-09: `--state` first said "NO PR YET" because I had pushed without `-u`, so gh couldn't tie my branch to PR #67; `git push -u` fixed it, and the monitor then reported the PR as CONFLICTING. I wrote the playbook from wheelgap's own numbers (outside PRs #45, #48 and #58 merged 2 to 6 minutes after opening; CONTRIBUTING.md says review comes "within a day or so"), so I nudge only after 3 quiet days. Its draft saw my unpushed merge commit and told me not to redo it, but it assumed main still had a "### Fixed" section under "## Unreleased", which had moved into 0.5.0 when the maintainer released it. I didn't post the draft; I pushed my fixes, wrote my-reply.md myself from my response rules, and posted it through Claude Code, where the voice guard let it through.
 
 ---
 
@@ -85,9 +76,7 @@ My manifest lists CONTRIBUTING.md's four checks (ruff format --check, ruff check
 
 I searched with issue-scout, using my fit profile from Unit 1: Python, Flask APIs and LLM-integration code, a wish to get better at working inside a larger unfamiliar codebase and at real open-source review, and a wish to avoid pure frontend work and unfamiliar languages. My first scan was broken in two ways (see the Unit 5 entry above). Even so, the scout did one thing well there: it accepted a copied issue from the mirror repo, then told me in its summary not to take it, because the mirror was a day old and the real discussion was upstream. After I fixed the query and added the per-repo cap, the second scan accepted three issues: wheelgap/wheelgap#57, wheelgap/wheelgap#56, and WingedGuardian/GENesis-AGI#4208. It rejected two copied issues from the mirror on bounded scope. On #57 every check passed, including both preferred checks (good-first-issue label, clear acceptance criteria). I did not apply the Unit 6 rubric-scope patch, so my scout gave no difficulty note.
 
-I chose #57 over the others for three reasons. Its "What to do" names an existing function in the same file, `parse_poetry_lock()`, as a model, so I could see the shape of the fix before writing code. The maintainer had merged an outside contributor's PR (#48) that day, and the repo's CONTRIBUTING.md says reviews come "within a day or so", so a PR would actually get read. And it is Python logic with a test suite, which matches my profile. I passed on #4208 because 198 of that repo's last 200 merged PRs were by the owner. I hope to learn how to make a change in someone else's codebase that matches its existing style and how to work with a maintainer's review.
-
-Honest read of the scout: the rubric checks did real work on claim status, maintainer activity, scope and AI policy. The ranking did not. "Fewest comments, then newest" turned out to mean just "newest" (every top result had 0 comments), and a copied repo games it easily. The "Maintainer alive" check also passes on a single commit made the day a repo was created. I logged both in scan-notes.md and did not patch the rubric.
+I chose #57 over the others for three reasons. Its "What to do" names an existing function in the same file, `parse_poetry_lock()`, as a model, so I could see the shape of the fix before writing code. The maintainer had merged an outside contributor's PR (#48) that day, and the repo's CONTRIBUTING.md says reviews come "within a day or so", so a PR would actually get read. And it is Python logic with a test suite, which matches my profile. I passed on #4208 because 198 of that repo's last 200 merged PRs were by the owner. I hope to learn how to make a change in someone else's codebase that matches its existing style and how to work with a maintainer's review. Honest read of the scout: the rubric checks did real work on claim status, maintainer activity, scope and AI policy. The ranking did not. "Fewest comments, then newest" turned out to mean just "newest" (every top result had 0 comments), and a copied repo games it easily. The "Maintainer alive" check also passes on a single commit made the day a repo was created. I logged both in scan-notes.md and did not patch the rubric.
 
 **Claim comment:** https://github.com/wheelgap/wheelgap/issues/57#issuecomment-6732626421
 
@@ -216,19 +205,17 @@ I ran the same test before and after the fix, then the four checks from CONTRIBU
 
 ## Implementation Notes
 
-The entries below are grouped by their corresponding unit deadline, with each unit one week apart. Units 5 through 7 had no separate submission; Assignment 5 is due at the end of Unit 8.
-
-**2026-10-19 — Unit 5 deadline**
+**2026-10-19**
 
 Installed issue-scout and wrote search-strategy.md. Scan 1 had a query with 0 results and a one-day-old mirror repo filling all five graded slots. Split the query into one search per term, added a max-2-per-repo filter, and ran scan 2, which accepted wheelgap#57, wheelgap#56 and GENesis-AGI#4208.
 
-**2026-10-26 — Unit 6 deadline**
+**2026-10-26**
 
 Picked #57 and claimed it with `gh issue comment`. Forked and cloned wheelgap; the suite was 175 passed, 1 skipped on `main`.
 
 Installed the voice guard and wrote CLAUDE.local.md. The guard stopped both of my already-posted comments when I ran it by hand. Running the two checks I had skipped showed `ruff format --check` failing on my test.
 
-**2026-11-02 — Unit 7 deadline**
+**2026-11-02**
 
 Added the `[metadata.files]` lookup to `parse_pdm_lock()` and a test with an old-format lockfile. Wrote plan.md after building it, which was the wrong order. plan-check rejected it: the maintainer had replied asking for a fallback to normalized names and a test with a capitalized name, and I hadn't seen the reply.
 
@@ -236,10 +223,9 @@ Added the normalized-name fallback and the `Jinja2 3.1.2` case, showed the test 
 
 Installed the ship-gate and wrote the manifest. Three STOPs (formatting, PR template and "Closes", changelog outside the plan's Scope), each fixed, then PASS. Updated PR #67's description to the template through Claude Code.
 
-**2026-11-09 — Unit 8 deadline**
+**2026-11-09**
 
 Installed the PR monitor and wrote my playbook. Found the maintainer's review and a merge conflict. Merged `main` (dc21681), changed the test (6268810), pushed, and posted my reply through the voice guard.
-
 
 **Toolkit**
 
