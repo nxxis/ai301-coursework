@@ -246,6 +246,10 @@ Installed the PR monitor and wrote my playbook. Found the maintainer's review an
 
 - 2026-11-09: @patrickballard reviewed: "the logic here is right", then asked for three changes: merge `main` and keep `_add_once` (with the changelog line under `## Unreleased` and a thanks link), drop `assert fake_pypi == []` because it can't fail (or use `fill_all()` for a real offline check), and use `[metadata]` with `lock_version = "3.0"` in the fixture.
 - 2026-11-09: I made all three in dc21681 and 6268810, pushed them together, and replied with what changed and the checks' output, asking one question about the changelog's place after the 0.5.0 release: https://github.com/wheelgap/wheelgap/pull/67#issuecomment-6733399562
+- 2026-11-09: @patrickballard: "that's all three done, and CI is green", and confirmed the top of `## Unreleased` is the right place for the changelog line, since entries there go into the next release, newest first.
+- 2026-11-09: no reply needed. Another PR (#8) had landed in `## Unreleased` and conflicted with my line, so I merged `main` again (5e4488c), kept both changelog lines with mine below #8's, and re-ran the four checks (267 passed, 1 skipped) before pushing.
+- 2026-11-09: after a closer read, @patrickballard said the code is right and the offline test "really proves it", and asked for two small changes before merging: `[metadata.files]` was written by PDM until 2.8 (lock_version 4.0 to 4.2 too), so the changelog line and code comment shouldn't say "lock_version < 4"; and the fixture mixed eras, since real 3.x locks use `{file = ...}` entries, not `{url = ...}`.
+- 2026-11-09: I changed both in 6fd6a50: the changelog line now reads "Read package files from the `[metadata.files]` table in older `pdm.lock` files (PDM before 2.8) instead of looking them up on PyPI.", the code comment says "PDM before 2.8", and `oldpkg`'s fixture entry uses the `{file = ...}` form while `Jinja2` keeps `{url = ...}`, so both shapes are covered. The four checks passed before the commit, and I replied with the commit and their output: https://github.com/wheelgap/wheelgap/pull/67#issuecomment-6733774633
 
 **Status:** Awaiting review
 
